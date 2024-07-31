@@ -30,3 +30,4 @@ Templates
 - index.html
 - category.html
 - detail.html
+"# ctf_flag" 
