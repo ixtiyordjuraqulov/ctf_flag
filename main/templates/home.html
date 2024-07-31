@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content%}
+<main class="container mt-3 mb-5">
+	<!-- featured news -->
+	<div class="row my-3">
+		<!-- Left -->
+		<div class="col-md-7">
+			<div class="card mb-3">
+			  <img src="/media/{{first_news.image}}" class="card-img-top" alt="Flag{this_is_the_key_to_the_next_door}">
+			  <div class="card-body">
+			    <h5 class="card-title">{{first_news.title}}</h5>
+			    <hr/>
+
+			  </div>
+			</div>
+		</div>
+		<!-- Right -->
+		<div class="col-md-5" style="max-height: 450px; overflow: auto;">
+		{% for news in three_news %}
+			<!-- News Box -->
+			<div class="card">
+			  <div class="row no-gutters">
+			    <div class="col-md-4">
+			       <img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h5 class="card-title">{{news.title}}</h5>
+
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<hr/>
+			{% endfor%}
+		</div>
+	</div>
+	<!-- Category Wise News -->
+	{% for category in three_categories %}
+	<h3 class="border-bottom pb-1"> {{category.title}} <a href="Marfeus: Neo Challenge2 da juda ko'p dushmanga duch kelasan. Faqat bitta fayldagi malumot ozotlikga olib chiqadi. Uni topish uchun {matrixdan chiqish} shu so`z orqali qidir." 
+
+	<div class="row my-4">
+		{% for news in category.news_set.all %}
+		{% if forloop.counter < 5 %}
+		<!-- News box -->
+		<div class="col-md-3">
+			<div class="card mb-3 shadow">
+		    	<img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
+			  <div class="card-body">
+			    <h5 class="card-title">{{news.title}}</h5>
+			    <hr/>
+
+			  </div>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+ {% endfor %}
+	<!-- End Single Category -->
+</main>
+{% endblock%}

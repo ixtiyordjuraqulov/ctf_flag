@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}homepage {% endblock%}</title>
+	<!-- Bootstrap 4 CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css ' %}" />
+	<!-- Main Jquery -->
+	<script type="text/javascript" src="{% static 'vendor/jquery.min.js' %} "></script>
+	<!-- Bootstrap Js -->
+	<script type="text/javascript" src="{% static '/vendor/bs4/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<!-- Top News -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container">
+		  <a class="navbar-brand" href="/" style = "font-weight: 600; font-size: 38px">CTF<span style = "color: rgb(0, 0, 142)">.UZ</span></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+
+		      </li>
+		      <li class="nav-item">
+
+		      </li>
+		      <li class="nav-item">
+
+		      </li>
+		    </ul>
+		  </div>
+	  	</div>
+	</nav>
+
+{% block content %}
+{% endblock%}
+
+    <hr/>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+
+    </p>
+    
+  </div>
+</footer>
+</body>
+</html>
